@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -34,8 +34,10 @@ public class User {
     @NotBlank
     private String password;
 
-    @Size(max = 11, min = 11)
-    private String phoneNumber;
+    @NotBlank
+    @Size(min=11, max=11)
+    private String phone;
 
+    @Positive
     private int age;
 }
